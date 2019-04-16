@@ -20,6 +20,21 @@ namespace NurseryManager.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Nursery> Nurseries { get; set; }
+        public DbSet<Class> Classes { get; set; }
+        public DbSet<Child> Children { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<ContactNumbers> ContactNumbers { get; set; }
+        public DbSet<Drink> Drink { get; set; }
+        public DbSet<Events> Events { get; set; }
+        public DbSet<Food> Food { get; set; }
+        public DbSet<Gallery> Galleries { get; set; }
+        public DbSet<Hygine> Hygines { get; set; }
+        public DbSet<Images> Images { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<Mood> Moods { get; set; }
+        public DbSet<Notes> Notes { get; set; }
+        public DbSet<Sleep> Sleeps { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

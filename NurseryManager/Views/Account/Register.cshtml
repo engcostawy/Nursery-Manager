@@ -1,41 +1,185 @@
 ﻿@model NurseryManager.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    Layout = null;
 }
 
-<h2>@ViewBag.Title.</h2>
+<html class="no-js css-menubar" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+    <title>Nursery Manager | Register</title>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    <link rel="apple-touch-icon" href="~/Content/assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="~/Content/assets/images/favicon.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Content/global/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/global/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/site.min.css">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/Content/global/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="~/Content/global/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="~/Content/assets/examples/css/pages/register-v2.css">
+
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/Content/global/fonts/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="~/Content/global/fonts/brand-icons/brand-icons.min.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+    <script src="~/Content/global/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+</head>
+<body class="animsition page-register-v2 layout-full page-dark">
+    <!-- Page -->
+    <div class="page" data-animsition-in="fade-in" data-animsition-out="fade-out">
+        <div class="page-content">
+            <div class="page-brand-info">
+                <div class="brand">
+                    <img class="brand-img" src="~/Content/assets/images/logo@2x.png" alt="...">
+                    <h2 class="brand-text font-size-40">Remark</h2>
+                </div>
+                <p class="font-size-20">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+
+            <div class="page-register-main animation-slide-left animation-duration-1">
+                <div class="brand hidden-md-up">
+                    <img class="brand-img" src="~/Content/assets/images/logo-colored@2x.png" alt="...">
+                    <h3 class="brand-text font-size-40">Remark</h3>
+                </div>
+                <h3 class="font-size-24">Sign Up</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(m => m.NurseryName, new { @class = "form-control", @id = "inputName", @name = "nurseryname", @placeholder = "Nursery Name" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email", @id = "inputEmail", @name = "email", @placeholder = "Email" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.PasswordFor(m => m.Password, new {
+                           @class = "form-control",
+                           @id = "inputPassword",
+                           @name = "password",
+                           @placeholder = "Password" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @type = "password",
+                            @class ="form-control",
+                            @id = "inputPasswordCheck",
+                            @name = "passwordCheck" ,
+                            @placeholder = "Confirm Password" })
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
+                            <input type="checkbox" id="inputCheckbox" name="term">
+                            <label for="inputCheckbox"></label>
+                        </div>
+                        <p class="ml-40">By clicking Sign Up, you agree to our <a href="#">Terms</a>.</p>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+
+                }
+
+                <p>Have account already? Please go to @Html.ActionLink("Sign In", "Login")</p>
+
+                <footer class="page-copyright">
+                    <p>WEBSITE BY Costa Development</p>
+                    <p>©
+                    <script>document.write(new Date().getFullYear())</script>. All RIGHT RESERVED.</p>
+                    <div class="social">
+                        <a class="btn btn-icon btn-round social-twitter mx-5" href="javascript:void(0)">
+                            <i class="icon bd-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn-icon btn-round social-facebook mx-5" href="javascript:void(0)">
+                            <i class="icon bd-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn-icon btn-round social-google-plus mx-5" href="javascript:void(0)">
+                            <i class="icon bd-google-plus" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </footer>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Page -->
+    <!-- Core  -->
+    <script src="~/Content/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/Content/global/vendor/jquery/jquery.js"></script>
+    <script src="~/Content/global/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="~/Content/global/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/Content/global/vendor/animsition/animsition.js"></script>
+    <script src="~/Content/global/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/Content/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/Content/global/vendor/asscrollable/jquery-asScrollable.js"></script>
+
+    <!-- Plugins -->
+    <script src="~/Content/global/vendor/switchery/switchery.js"></script>
+    <script src="~/Content/global/vendor/intro-js/intro.js"></script>
+    <script src="~/Content/global/vendor/screenfull/screenfull.js"></script>
+    <script src="~/Content/global/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/Content/global/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <!-- Scripts -->
+    <script src="~/Content/global/js/Component.js"></script>
+    <script src="~/Content/global/js/Plugin.js"></script>
+    <script src="~/Content/global/js/Base.js"></script>
+    <script src="~/Content/global/js/Config.js"></script>
+
+    <script src="~/Content/assets/js/Section/Menubar.js"></script>
+    <script src="~/Content/assets/js/Section/Sidebar.js"></script>
+    <script src="~/Content/assets/js/Section/PageAside.js"></script>
+    <script src="~/Content/assets/js/Plugin/menu.js"></script>
+
+    <!-- Config -->
+    <script src="~/Content/global/js/config/colors.js"></script>
+    <script src="~/Content/assets/js/config/tour.js"></script>
+    <script>Config.set('assets', '~/Content/assets');</script>
+
+    <!-- Page -->
+    <script src="~/Content/assets/js/Site.js"></script>
+    <script src="~/Content/global/js/Plugin/asscrollable.js"></script>
+    <script src="~/Content/global/js/Plugin/slidepanel.js"></script>
+    <script src="~/Content/global/js/Plugin/switchery.js"></script>
+    <script src="~/Content/global/js/Plugin/jquery-placeholder.js"></script>
+    <script src="~/Content/global/js/Plugin/animate-list.js"></script>
+
+    <script>
+        (function (document, window, $) {
+            'use strict';
+
+            var Site = window.Site;
+            $(document).ready(function () {
+                Site.run();
+            });
+        })(document, window, jQuery);
+    </script>
+
+</body>
+</html>

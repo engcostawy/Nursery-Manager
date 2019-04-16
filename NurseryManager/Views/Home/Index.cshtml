@@ -2,30 +2,81 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <!-- Panel Wizard Form -->
+        <div class="panel" id="exampleWizardForm">
+            <div class="panel-heading">
+                <h3 class="panel-title">Wizard Form</h3>
+            </div>
+            <div class="panel-body">
+                <!-- Steps -->
+                <div class="steps steps-sm row" data-plugin="matchHeight" data-by-row="true" role="tablist">
+                    <div class="step col-lg-4 current" data-target="#exampleAccount" role="tab">
+                        <span class="step-number">1</span>
+                        <div class="step-desc">
+                            <span class="step-title">Account</span>
+                            <p>Login for identification</p>
+                        </div>
+                    </div>
+
+                    <div class="step col-lg-4" data-target="#exampleBilling" role="tab">
+                        <span class="step-number">2</span>
+                        <div class="step-desc">
+                            <span class="step-title">Billing</span>
+                            <p>Pay for the bill</p>
+                        </div>
+                    </div>
+
+                    <div class="step col-lg-4" data-target="#exampleGetting" role="tab">
+                        <span class="step-number">3</span>
+                        <div class="step-desc">
+                            <span class="step-title">Getting</span>
+                            <p>Waiting for the goods</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Steps -->
+                <!-- Wizard Content -->
+                <div class="wizard-content">
+                    <div class="wizard-pane active" id="exampleAccount" role="tabpanel">
+                        <form id="exampleAccountForm">
+                            <div class="form-group">
+                                <label class="form-control-label" for="inputUserName">Username</label>
+                                <input type="text" class="form-control" id="inputUserName" name="username" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" name="password"
+                                       required="required">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="wizard-pane" id="exampleBilling" role="tabpanel">
+                        <form id="exampleBillingForm">
+                            <div class="form-group">
+                                <label class="form-control-label" for="inputCardNumber">Card Number</label>
+                                <input type="text" class="form-control" id="inputCardNumber" name="number" placeholder="Card number">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="inputCVV">CVV</label>
+                                <input type="text" class="form-control" id="inputCVV" name="cvv" placeholder="CVV">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="wizard-pane" id="exampleGetting" role="tabpanel">
+                        <div class="text-center my-20">
+                            <i class="icon wb-check font-size-40" aria-hidden="true"></i>
+                            <h4>We got your order. Your product will be shipping soon.</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Wizard Content -->
+
+            </div>
+        </div>
+        <!-- End Panel Wizard One Form -->
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    <div class="col-lg-3"></div>
 </div>
